@@ -3,12 +3,27 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "isolatedModules": true,
+    "strictFunctionTypes": false,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "jsx": "preserve",
-    "sourceMap": true,
+    "sourceMap": false,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "removeComments": true,
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "mock/**/*.ts",
+    "vite.config.ts"
+, "config/index.ts"    ]
 }
