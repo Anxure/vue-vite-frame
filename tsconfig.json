@@ -6,6 +6,7 @@
     "isolatedModules": true,
     "strictFunctionTypes": false,
     "allowSyntheticDefaultImports": true,
+    "suppressImplicitAnyIndexErrors":true,
     "strict": true,
     "jsx": "preserve",
     "sourceMap": false,
