@@ -66,7 +66,7 @@ import { Form } from 'ant-design-vue'
 import { login } from '@/api/user'
 import type { LoginParams } from '@/api/model/userModel'
 import { setStore } from '@/utils/storage'
-import { useUserStore } from '@/store'
+import { useUserStore, useAppStore } from '@/store'
 import backImg from '@/assets/image/login/login-box-bg.svg'
 interface DataProps {
   formTitle: string
@@ -84,7 +84,10 @@ const loginData = reactive<DataProps>({
 const loginLoading = ref(false)
 const router = useRouter()
 const userStore = useUserStore()
+const appStore = useAppStore()
+loginData.formTitle = appStore.title
 const useForm = Form.useForm
+
 const { validate, validateInfos } = useForm(
   loginData.formData,
   reactive({
@@ -125,7 +128,6 @@ const handleLogin = (e: { preventDefault: () => void }) => {
       console.log('error', err)
     })
 }
-console.log(1)
 </script>
 <style lang="less" scoped>
 .login-container {
