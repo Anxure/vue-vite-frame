@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2022-06-14 11:09:03
+ * @LastEditTime: 2022-07-06 14:55:08
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -49,23 +49,27 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         }
       }
     },
+    esbuild: {
+      pure: command === 'build' ? ['console.log', 'debugger']: []
+    },
     build: {
       target: 'modules',
       cssCodeSplit: true, //  css分包，如果设置为false，整个项目中的所有 CSS 将被提取到一个 CSS 文件中
       sourcemap: false, // 类型： boolean | 'both' | 'inline' | 'hidden' | 'none' 是否生成 sourcemap，默认为 false
-      terserOptions: {
-        // 打包移除console.log debugger
-        // https://terser.org/docs/api-reference#minify-options
-        compress: {
-          drop_console: isBuild,
-          drop_debugger: isBuild,
-        },
-        // 删除注释信息
-        output: {
-          // 去掉注释内容
-          comments: isBuild,
-        },
-      },
+      // terserOptions: {
+      //   // 打包移除console.log debugger
+      //   // 此配置需要设置minify为terser
+      //   // https://terser.org/docs/api-reference#minify-options
+      //   compress: {
+      //     drop_console: isBuild,
+      //     drop_debugger: isBuild,
+      //   },
+      //   // 删除注释信息
+      //   output: {
+      //     // 去掉注释内容
+      //     comments: isBuild,
+      //   },
+      // },
       rollupOptions: {
         // 确保外部化处理那些你不想打包进库的依赖
         external: [],
