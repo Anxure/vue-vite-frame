@@ -4,16 +4,11 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2022-06-01 17:42:11
+ * @LastEditTime: 2022-06-14 11:09:03
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
-import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-function resovePath(paths: string) {
-  // 如果 __dirname 找不到 需要 yarn add @types/node
-  return resolve(__dirname, paths)
-}
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
@@ -21,8 +16,6 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const { VITE_APP_BASE_URL, VITE_APP_TARGET_URL } = env
   const isBuild = command === 'build'
   const isOpenGip = false
-  const VITE_DROP_CONSOLE = true
-
   return {
     plugins: createVitePlugins(isBuild, isOpenGip),
     resolve: {
@@ -58,6 +51,21 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     },
     build: {
       target: 'modules',
+      cssCodeSplit: true, //  css分包，如果设置为false，整个项目中的所有 CSS 将被提取到一个 CSS 文件中
+      sourcemap: false, // 类型： boolean | 'both' | 'inline' | 'hidden' | 'none' 是否生成 sourcemap，默认为 false
+      terserOptions: {
+        // 打包移除console.log debugger
+        // https://terser.org/docs/api-reference#minify-options
+        compress: {
+          drop_console: isBuild,
+          drop_debugger: isBuild,
+        },
+        // 删除注释信息
+        output: {
+          // 去掉注释内容
+          comments: isBuild,
+        },
+      },
       rollupOptions: {
         // 确保外部化处理那些你不想打包进库的依赖
         external: [],
