@@ -24,7 +24,7 @@
           <a-avatar class="user-avatar" :src="headerImg">
             <!-- <template #icon><UserOutlined /></template> -->
           </a-avatar>
-          <span class="user-name">{{userInfo.username}}<DownOutlined /></span>
+          <span class="user-name">{{ userInfo.username }}<DownOutlined /></span>
         </div>
         <template #overlay>
           <a-menu>
@@ -42,30 +42,29 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent, ref, computed } from 'vue';
-import { useAppStore, useUserStore } from '@/store';
+import {ref } from 'vue'
+import { useAppStore, useUserStore } from '@/store'
 import { useRouter } from 'vue-router'
-import { FileOutlined, BellOutlined, DownOutlined } from '@ant-design/icons-vue';
-import { message } from 'ant-design-vue';
-import {removeAll} from '@/utils/storage';
-import headerImg from '@/assets/image/avatar.png';
-import { resetRouter } from '@/router';
-    const appStore = useAppStore();
-    const userStore = useUserStore();
-    const router = useRouter();
-    function goToApi() {
-      message.info('功能暂未开发')
-    }
-    function loginOut() {
-      removeAll()
-      resetRouter()
-      router.push('/login')
-
-    }
-    const theme = appStore.theme
-    const userInfo = userStore.userInfo
-    const show = ref(false)
-    const activeKey = ref('1')
+import { FileOutlined, BellOutlined, DownOutlined } from '@ant-design/icons-vue'
+import { message } from 'ant-design-vue'
+import { removeAll } from '@/utils/storage'
+import headerImg from '@/assets/image/avatar.png'
+import { resetRouter } from '@/router'
+const appStore = useAppStore()
+const userStore = useUserStore()
+const router = useRouter()
+function goToApi() {
+  message.info('功能暂未开发')
+}
+function loginOut() {
+  removeAll()
+  resetRouter()
+  router.push('/login')
+}
+const theme = appStore.theme
+const userInfo = userStore.userInfo
+const show = ref(false)
+const activeKey = ref('1')
 </script>
 
 <style lang="less" scoped>
@@ -104,7 +103,7 @@ import { resetRouter } from '@/router';
   .api-text,
   .notice,
   .user-name {
-     color: hsla(0, 0%, 100%, 0.85);
+    color: hsla(0, 0%, 100%, 0.85);
   }
 }
 .dark.layout-header {

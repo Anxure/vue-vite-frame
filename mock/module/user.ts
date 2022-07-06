@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-05-31 10:23:31
  * @LastEditors: Anxure
- * @LastEditTime: 2022-06-01 17:40:21
+ * @LastEditTime: 2022-06-14 10:50:58
  */
 import { resultSuccess, resultError, getJson, getQueryParameters, requestParams } from '../util'
 import { MockMethod } from 'vite-plugin-mock'
@@ -120,7 +120,6 @@ export default [
     timeout: 1000,
     method: 'post',
     response: (request: requestParams) => {
-      console.log(request)
       const { username, password } = request?.body
       const checkUser = defaultUserInfo.find(item => (item.username === username && item.password === password))
       if (!checkUser) {
