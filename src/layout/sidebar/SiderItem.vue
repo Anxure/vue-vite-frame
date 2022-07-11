@@ -23,8 +23,10 @@
   </a-sub-menu>
 </template>
 <script lang="ts" setup>
-name: 'SubMenu'
- defineProps({
+defineOptions({
+  name: 'SubMenu'
+})
+defineProps({
   menuInfo: {
     type: Object,
     default: () => ({})
