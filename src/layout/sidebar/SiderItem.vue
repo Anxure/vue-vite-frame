@@ -3,7 +3,7 @@
     <template #title>
       <span class="anticon">
         <svg class="icon" aria-hidden="true">
-           <use :xlink:href="`#icon-${menuInfo.icon}`"></use>
+          <use :xlink:href="`#icon-${menuInfo.icon}`"></use>
         </svg>
       </span>
       <span>{{ menuInfo.title }}</span>
@@ -22,14 +22,12 @@
     </template>
   </a-sub-menu>
 </template>
-<script lang="ts">
-export default {
-  name: 'SubMenu',
-  props: {
-    menuInfo: {
-      type: Object,
-      default: () => ({})
-    }
+<script lang="ts" setup>
+name: 'SubMenu'
+ defineProps({
+  menuInfo: {
+    type: Object,
+    default: () => ({})
   }
-};
+})
 </script>
