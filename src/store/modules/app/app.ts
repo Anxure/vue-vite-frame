@@ -4,13 +4,15 @@
  * @Desc:
  * @Date: 2022-05-30 15:42:04
  * @LastEditors: Anxure
- * @LastEditTime: 2022-06-02 14:25:27
+ * @LastEditTime: 2022-07-13 10:37:29
  */import { layoutSetting } from '@/config/globalSetting'
 import { defineStore } from 'pinia'
+import { AppState } from './type'
+import { MenuTheme } from 'ant-design-vue/es'
 export const useAppStore = defineStore('app', {
-  state: () => ({
+  state: () : AppState => ({
     collapsed: false,
-    theme: layoutSetting.theme,
+    theme: layoutSetting.theme as MenuTheme,
     title: layoutSetting.title
   }),
   actions: {

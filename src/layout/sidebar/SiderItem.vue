@@ -1,5 +1,5 @@
 <template>
-  <a-sub-menu :key="menuInfo.name" v-bind="$attrs">
+  <a-sub-menu :key="menuInfo.path" v-bind="$attrs">
     <template #title>
       <span class="anticon">
         <svg class="icon" aria-hidden="true">
@@ -10,7 +10,7 @@
     </template>
     <template v-for="item in menuInfo.children" :key="item.name">
       <template v-if="!item.children">
-        <a-menu-item :key="item.name">
+        <a-menu-item :key="item.path">
           <router-link :to="item.path">
             <span>{{ item.title }}</span>
           </router-link>
