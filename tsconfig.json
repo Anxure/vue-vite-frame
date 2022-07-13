@@ -26,6 +26,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "mock/**/*.ts",
-    "vite.config.ts"
-, "config/index.ts"    ]
+    "vite.config.ts",
+    "config/index.ts",
+    "./components.d.ts"
+  ]
 }
