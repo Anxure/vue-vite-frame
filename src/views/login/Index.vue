@@ -68,6 +68,7 @@ import type { LoginParams } from '@/api/model/userModel'
 import { setStore } from '@/utils/storage'
 import { useUserStore, useAppStore } from '@/store'
 import backImg from '@/assets/image/login/login-box-bg.svg'
+import { useBackToIndex } from '@/hooks/useBackToIndex'
 interface DataProps {
   formTitle: string
   rememberMe: boolean
@@ -85,7 +86,7 @@ const loginLoading = ref(false)
 const router = useRouter()
 const userStore = useUserStore()
 const appStore = useAppStore()
-loginData.formTitle = appStore.title
+loginData.formTitle = appStore.title as string
 const useForm = Form.useForm
 
 const { validate, validateInfos } = useForm(
@@ -119,7 +120,7 @@ const handleLogin = (e: { preventDefault: () => void }) => {
         userStore.$patch({'userInfo': result})
         const { userMenu } = await userStore.getMenu({ id: result.id })
         console.log(userMenu, 'userMenu')
-        const { path } = userMenu[0].children![0]
+        const path = useBackToIndex()
         router.push({ path })
       }
     })

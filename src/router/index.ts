@@ -7,6 +7,7 @@ import 'nprogress/nprogress.css' // progress bar style
 import { getStore } from '@/utils/storage'
 import { useUserStore} from '@/store'
 import { computed } from 'vue'
+import { useLoginOut } from '@/hooks/useLoginOut'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [...constantRoutes]
@@ -26,18 +27,23 @@ router.beforeEach(async (to, from, next) => {
   if (!hasToken) {
     return whiteRouterList.includes(to.path) ? next() : to.path === '/'? next('/login') :next(`/login?redirect=${encodeURIComponent(to.fullPath)}`)
   }
+  if (to.path === '/login') {
+    useLoginOut()
+    next()
+    return
+  }
   if (routerLoaded) {
-    if (to.path === '/login') {
-      const userAsyncRouter = userStore.userRouter
-      const { path } = userAsyncRouter[0].children![0]
-      next({ path })
-    } else {
-      next()
-    }
+    next()
   } else {
-    const { userMenu:userRouter } = await userStore.getMenu({ id: userInfo.id })
-    userRouter.push(noMatchRoute)
-    removeRouters = userRouter.map((item) => router.addRoute(item));
+    let userRoute = []
+    if (userStore.userRouter.length === 0) {
+      const { userMenu: userRouter } = await userStore.getMenu({ id: userInfo.id })
+      userRoute = userRouter
+    } else {
+      userRoute = userStore.userRouter
+    }
+    userRoute.push(noMatchRoute)
+    removeRouters = userRoute.map(item => router.addRoute(item))
     routerLoaded = true
     next({ ...to, replace: true })
   }

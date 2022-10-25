@@ -4,13 +4,13 @@
  * @Desc:
  * @Date: 2022-05-30 15:42:04
  * @LastEditors: Anxure
- * @LastEditTime: 2022-05-31 09:35:35
+ * @LastEditTime: 2022-10-25 16:43:10
  */
-import { computed } from 'vue'
 import { useUserStore } from '@/store';
+import { findFirstUrl } from '@/utils/utils'
 export function useBackToIndex() {
   const userStore = useUserStore()
-  console.log(userStore)
-  // const userRouter = computed(() => userStore.userRouter)
-  // return userStore.userRouter?.children[0].path
+  const useRoute = userStore.menu
+  console.log(useRoute)
+  return findFirstUrl(useRoute)
 }

@@ -4,20 +4,26 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-25 15:07:53
+ * @LastEditTime: 2022-10-25 15:35:54
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
 import { resolve } from 'path'
+import { layoutSetting } from './src/config/globalSetting'
+import { wrapperEnv } from './config/utils';
+import { createProxy } from './config/proxy';
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
-  const { VITE_APP_BASE_URL, VITE_APP_TARGET_URL } = env
+  const viteEnv = wrapperEnv(env);
+  const { VITE_PROXY } = viteEnv
   const isBuild = command === 'build'
   const isOpenGip = false
+  const title = layoutSetting.title
+  const buildTime = `build-time=${new Date().toLocaleString()}`
   return {
-    plugins: createVitePlugins(isBuild, isOpenGip),
+    plugins: createVitePlugins(isBuild, isOpenGip , title, buildTime),
     resolve: {
       alias: {
         '@': resolve(__dirname, './src')
@@ -41,13 +47,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       open: false, // 类型： boolean | string在服务器启动时自动在浏览器中打开应用程序；
       cors: false, // 类型： boolean | CorsOptions 为开发服务器配置 CORS。默认启用并允许任何源
       host: '0.0.0.0', // IP配置，支持从IP启动
-      proxy: {
-        [VITE_APP_BASE_URL]: {
-          target: VITE_APP_TARGET_URL,
-          changeOrigin: true,
-          rewrite: path => path.replace(new RegExp(`^${VITE_APP_BASE_URL}`), '')
-        }
-      }
+      proxy: createProxy(VITE_PROXY)
     },
     esbuild: {
       pure: command === 'build' ? ['console.log', 'debugger']: []
