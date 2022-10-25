@@ -47,9 +47,8 @@ import { useAppStore, useUserStore } from '@/store'
 import { useRouter } from 'vue-router'
 import { FileOutlined, BellOutlined, DownOutlined } from '@ant-design/icons-vue'
 import { message } from 'ant-design-vue'
-import { removeAll } from '@/utils/storage'
 import headerImg from '@/assets/image/avatar.png'
-import { resetRouter } from '@/router'
+import { useLoginOut } from '@/hooks/useLoginOut'
 const appStore = useAppStore()
 const userStore = useUserStore()
 const router = useRouter()
@@ -57,9 +56,7 @@ function goToApi() {
   message.info('功能暂未开发')
 }
 function loginOut() {
-  removeAll()
-  resetRouter()
-  router.push('/login')
+ useLoginOut()
 }
 const theme = appStore.theme
 const userInfo = userStore.userInfo
