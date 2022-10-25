@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2022-07-06 14:55:08
+ * @LastEditTime: 2022-10-25 15:07:53
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -79,7 +79,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         // https://rollupjs.org/guide/en/#watch-options
       },
       // Turning off brotliSize display can slightly reduce packaging time
-      brotliSize: false,
+      reportCompressedSize: false,
       chunkSizeWarningLimit: 2000,
     },
   }
