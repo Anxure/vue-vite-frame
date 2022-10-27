@@ -3,12 +3,13 @@
  * @Desc:
  * @Date: 2022-10-11 10:22:29
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-25 14:49:23
+ * @LastEditTime: 2022-10-27 18:01:53
  */
 // Read all environment variable configuration files to process.env
 type Recordable<T = any> = Record<string, T>;
 interface ViteEnv {
   VITE_PROXY: [string, string][];
+  VITE_PUBLIC_PATH: string
 }
 export function wrapperEnv(envConf: Recordable): ViteEnv {
   const ret: any = {};
