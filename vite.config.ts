@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-25 15:35:54
+ * @LastEditTime: 2022-10-27 18:05:53
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -17,12 +17,13 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
   const viteEnv = wrapperEnv(env);
-  const { VITE_PROXY } = viteEnv
+  const { VITE_PROXY, VITE_PUBLIC_PATH } = viteEnv
   const isBuild = command === 'build'
   const isOpenGip = false
   const title = layoutSetting.title
   const buildTime = `build-time=${new Date().toLocaleString()}`
   return {
+    base: VITE_PUBLIC_PATH,
     plugins: createVitePlugins(isBuild, isOpenGip , title, buildTime),
     resolve: {
       alias: {
