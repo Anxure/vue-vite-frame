@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-05-31 10:23:31
  * @LastEditors: Anxure
- * @LastEditTime: 2022-06-14 10:50:58
+ * @LastEditTime: 2022-10-26 15:24:33
  */
 import { resultSuccess, resultError, getJson, getQueryParameters, requestParams } from '../util'
 import { MockMethod } from 'vite-plugin-mock'
@@ -32,6 +32,12 @@ export const menuTree = [
     name: 'workplace',
     path: '/workplace',
     icon: 'gongzuotai'
+  },
+  {
+    title: '表格示例',
+    name: 'table',
+    path: '/table',
+    icon:'biaoge1'
   },
   {
     title: '表单页',

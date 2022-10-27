@@ -21,6 +21,12 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: { title: '工作台' }
       },
       {
+        path: '/table',
+        name: 'table',
+        component: () => import('@/views/table/Index.vue'),
+        meta: { title: '表格示例' }
+      },
+      {
         path: '/form',
         name: 'form',
         redirect: '/form/base-form',
