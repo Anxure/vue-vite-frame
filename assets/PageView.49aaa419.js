@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper.cdc0426e.js";import{at as t,o as r,ao as a}from"./index.b47142ce.js";const n={name:"PageView"};function s(c,_,p,i,m,f){const e=t("router-view");return r(),a(e)}const l=o(n,[["render",s]]);export{l as default};
