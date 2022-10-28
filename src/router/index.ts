@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { constantRoutes, noMatchRoute } from './router'
 // import { useGetAllowRoute, useLoopTranformRouter } from '@/hooks/usePermissionState'
 // import { asyncRoutes } from '@/router/router'
@@ -9,7 +9,7 @@ import { useUserStore} from '@/store'
 import { computed } from 'vue'
 import { useLoginOut } from '@/hooks/useLoginOut'
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
   routes: [...constantRoutes]
 })
 let routerLoaded = false // 判断是是否加过路由，避免重复执行

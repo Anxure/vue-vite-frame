@@ -6,14 +6,14 @@
         <div class="center">
           <img class="w-5" :src="backImg" :alt="loginData.formTitle" />
         </div>
-        <div class="t-4 login-info color-f">基于vue3.0、TypeScript、ant-design-vue开发的后台管理系统</div>
+        <div class="t-4 login-info color-f">基于vue3.0、TypeScript、Vite、pinia、ant-design-vue开发的后台管理系统</div>
         <div class="t-4 login-info color-f">
           @github:
           <a
             class="color-f"
             target="_blank"
             href="https://github.com/Anxure/vue-base-frame"
-          >https://github.com/Anxure/vue-base-frame</a>
+          >https://github.com/Anxure/vue-vite-frame</a>
         </div>
         <div class="t-4 login-info color-f">@author: Anxure</div>
       </div>
