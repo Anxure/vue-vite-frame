@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-06-01 10:40:55
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-28 09:30:02
+ * @LastEditTime: 2022-10-28 09:35:37
  */
 /**
  * @name ConfigMockPlugin
@@ -19,7 +19,7 @@
          prodEnabled: isBuild, //实际开发请关闭，会影响打包体积
          // https://github.com/anncwb/vite-plugin-mock/issues/9
          injectCode: `
-        import { setupProdMockServer } from '../../../mock/_createProdMockServer';
+        import { setupProdMockServer } from '../mock/_createProdMockServer';
         setupProdMockServer();
         `,
      })
