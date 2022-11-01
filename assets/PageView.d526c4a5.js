@@ -1,0 +1,1 @@
+import{_ as o,av as t,o as r,ap as a}from"./index.a5df3d62.js";const c={name:"PageView"};function n(s,_,i,p,u,f){const e=t("router-view");return r(),a(e)}const v=o(c,[["render",n],["__file","D:/project/github/vue-vite-frame/src/layout/PageView.vue"]]);export{v as default};
