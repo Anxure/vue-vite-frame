@@ -1,1 +1,0 @@
-import{b as e}from"./index.a5df3d62.js";function u(r){if(r.length===0)throw Error("\u6682\u65E0\u83DC\u5355\uFF0C\u8BF7\u8054\u7CFB\u7BA1\u7406\u5458");return r[0].path&&r[0].path!=="/"?r[0].path:u(r[0].children)}function n(){const t=e().menu;return u(t)}export{n as u};
