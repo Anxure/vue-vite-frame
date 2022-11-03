@@ -4,9 +4,10 @@
  * @Desc:
  * @Date: 2022-06-01 10:30:06
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-25 16:00:10
+ * @LastEditTime: 2022-11-03 13:50:52
  */
-import type { Plugin } from 'vite'
+// import type { Plugin } from 'vite'
+import { PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { ConfigMockPlugin } from './mock'
@@ -18,7 +19,7 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 import { ViteHtmlPlugin } from './html'
 // import { ConfigRestartPlugin } from './restart'
 export function createVitePlugins(isBuild: boolean, isOpenGip: boolean,  title: string, version: string) {
-  const vitePlugins: (Plugin | Plugin[])[] = [
+  const vitePlugins: (PluginOption | PluginOption[])[] = [
     // vue支持
     vue(),
     // JSX支持
@@ -29,14 +30,15 @@ export function createVitePlugins(isBuild: boolean, isOpenGip: boolean,  title: 
     ConfigCompressPlugin(isOpenGip),
     // 按需一入antd组件库
     autoImportAntd(),
+    ViteHtmlPlugin(isBuild, title, version)
     // 依赖预加载保存(自vite2.9.1以后废弃)
     // PkgConfig(),
     // OptimizationPersist(),
-    ViteHtmlPlugin(isBuild, title, version),
   ]
 
   // vite-plugin-mock
   vitePlugins.push(ConfigMockPlugin(isBuild))
+  vitePlugins.push()
 
   return vitePlugins
 }
