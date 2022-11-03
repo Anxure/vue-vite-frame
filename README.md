@@ -27,7 +27,19 @@
 
 * 集成 `mock` 接口服务，dev 环境和发布环境都支持，可动态配置是否启用 mock 服务，不启用时不会加载 mock 包，减少打包体积
 
-  ...
+* 表格封装、多标签页导航、错误提示页面、主题更换等其他功能
+
+### 预览
+
+![登录页](https://raw.githubusercontent.com/Anxure/vue-vite-frame/gh-page/image/1.png)
+
+![首页](https://raw.githubusercontent.com/Anxure/vue-vite-frame/gh-page/image/2.png)
+
+![表格示例](https://raw.githubusercontent.com/Anxure/vue-vite-frame/gh-page/image/3.png)
+
+![错误页面](https://raw.githubusercontent.com/Anxure/vue-vite-frame/gh-page/image/4.png)
+
+![](https://raw.githubusercontent.com/Anxure/vue-vite-frame/gh-page/image/5.png)
 
 ### 快速开始
 
@@ -40,4 +52,7 @@ cd vue-vite-frame
 npm i 或者 yarn 或者 pnpm
 # 启动
 yarn dev
+```
+
+```
 ```
