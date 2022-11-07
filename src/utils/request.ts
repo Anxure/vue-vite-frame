@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-05-30 15:42:04
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-25 15:42:43
+ * @LastEditTime: 2022-11-07 14:43:24
  */
 import axios,{ AxiosError, AxiosRequestConfig }  from 'axios'
 import { HTTP_CODE } from '@/enums/http'
@@ -13,7 +13,7 @@ import { useLoginOut } from '@/hooks/useLoginOut';
 // const baseUrl = import.meta.env.PROD ? '/api' : import.meta.env.VUE_APP_API_HOST
 const request = axios.create({
   timeout: 5000,
-  baseURL: import.meta.env.VITE_APP_BASE_URL + '',
+  baseURL: import.meta.env.VITE_APP_BASE_URL,
   headers: {
     'Content-Type': 'application/json;charset=UTF-8'
   }

@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-06-01 10:30:06
  * @LastEditors: Anxure
- * @LastEditTime: 2022-11-03 13:50:52
+ * @LastEditTime: 2022-11-07 14:56:51
  */
 // import type { Plugin } from 'vite'
 import { PluginOption } from 'vite';
@@ -18,7 +18,7 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 // import PkgConfig from 'vite-plugin-package-config'
 import { ViteHtmlPlugin } from './html'
 // import { ConfigRestartPlugin } from './restart'
-export function createVitePlugins(isBuild: boolean, isOpenGip: boolean,  title: string, version: string) {
+export function createVitePlugins(isBuild: boolean, isOpenGip: boolean,  title: string, version: string, isMock: boolean) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // vue支持
     vue(),
@@ -37,8 +37,7 @@ export function createVitePlugins(isBuild: boolean, isOpenGip: boolean,  title: 
   ]
 
   // vite-plugin-mock
-  vitePlugins.push(ConfigMockPlugin(isBuild))
-  vitePlugins.push()
+  vitePlugins.push(ConfigMockPlugin(isBuild, isMock))
 
   return vitePlugins
 }

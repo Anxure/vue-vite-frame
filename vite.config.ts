@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-27 18:05:53
+ * @LastEditTime: 2022-11-07 15:00:30
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -14,17 +14,18 @@ import { wrapperEnv } from './config/utils';
 import { createProxy } from './config/proxy';
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
+  console.log(command)
   const root = process.cwd()
   const env = loadEnv(mode, root)
   const viteEnv = wrapperEnv(env);
-  const { VITE_PROXY, VITE_PUBLIC_PATH } = viteEnv
+  const { VITE_PROXY, VITE_PUBLIC_PATH, VITE_PROD_MOCK } = viteEnv
   const isBuild = command === 'build'
   const isOpenGip = false
   const title = layoutSetting.title
   const buildTime = `build-time=${new Date().toLocaleString()}`
   return {
     base: VITE_PUBLIC_PATH,
-    plugins: createVitePlugins(isBuild, isOpenGip , title, buildTime),
+    plugins: createVitePlugins(isBuild, isOpenGip , title, buildTime, VITE_PROD_MOCK),
     resolve: {
       alias: {
         '@': resolve(__dirname, './src')
@@ -51,7 +52,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       proxy: createProxy(VITE_PROXY)
     },
     esbuild: {
-      pure: command === 'build' ? ['console.log', 'debugger']: []
+      // pure: command === 'build' ? ['console.log', 'debugger']: []
     },
     build: {
       target: 'modules',
