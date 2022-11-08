@@ -1,4 +1,4 @@
-<h3 align="center"> vue-vite-frame </h3>
+<h1 align="center"> vue-vite-frame </h1>
 <p align="center">
   <a href="https://github.com/Anxure/vue-vite-frame/releases"><img allt="release" src="https://badgen.net/github/release/Anxure/vue-vite-frame"/></a>
   <a href="https://github.com/Anxure/vue-vite-frame"><img allt="stars" src="https://badgen.net/github/stars/Anxure/vue-vite-frame"/></a>
