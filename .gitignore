@@ -1,4 +1,7 @@
 node_modules
 .DS_Store
 dist-ssr
+package-lock.json
+pnpm-lock.yaml
+yarn.locl
 *.local
