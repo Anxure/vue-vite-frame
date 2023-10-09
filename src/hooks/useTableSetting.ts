@@ -3,10 +3,10 @@
  * @Desc: 封装表格示例
  * @Date: 2022-10-26 15:37:03
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-27 15:17:19
+ * @LastEditTime: 2023-10-09 11:23:29
  */
 import { message } from 'ant-design-vue';
-import { cloneDeep } from 'lodash';
+import { cloneDeep } from 'lodash-es';
 import {computed ,toRefs , reactive} from 'vue';
 import {downloadFileFromStream } from '@/hooks/useDownload';
 import dayjs from 'dayjs';
