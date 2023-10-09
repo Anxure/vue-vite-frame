@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2022-11-07 15:00:30
+ * @LastEditTime: 2023-10-09 11:00:30
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -12,6 +12,7 @@ import { resolve } from 'path'
 import { layoutSetting } from './src/config/globalSetting'
 import { wrapperEnv } from './config/utils';
 import { createProxy } from './config/proxy';
+import { themeToken } from './src/config/theme';
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   console.log(command)
@@ -34,10 +35,8 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         less: {
-          modifyVars: {
-            hack: `true; @import "${resolve('src/assets/style/variables.less')}"`
-          },
-          javascriptEnabled: true
+          javascriptEnabled: true,
+          modifyVars: themeToken
         }
       }
     },
@@ -52,7 +51,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       proxy: createProxy(VITE_PROXY)
     },
     esbuild: {
-      // pure: command === 'build' ? ['console.log', 'debugger']: []
+      pure: command === 'build' ? ['console.log', 'debugger']: []
     },
     build: {
       target: 'modules',

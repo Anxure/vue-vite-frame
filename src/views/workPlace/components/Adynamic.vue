@@ -31,7 +31,7 @@ import { dynamicInfo } from './data';
 <style scoped lang="less">
 .dynamic-list {
   :deep(a){
-    color: @primary-color;
+    color: @colorPrimary;
     margin-right:3px;
   }
 }

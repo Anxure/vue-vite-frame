@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-05-31 10:23:31
  * @LastEditors: Anxure
- * @LastEditTime: 2022-11-08 15:49:03
+ * @LastEditTime: 2023-10-09 11:01:19
  */
 import { resultSuccess, resultError, getJson, getQueryParameters, requestParams } from '../util'
 import { MockMethod } from 'vite-plugin-mock'
@@ -27,6 +27,12 @@ const defaultUserInfo = [
   }
 ]
 export const menuTree = [
+  {
+    title: '工作台',
+    name: 'workplace',
+    path: '/workplace',
+    icon: 'gongzuotai'
+  },
   {
     title: '工作台',
     name: 'workplace',
@@ -154,4 +160,4 @@ export default [
       ])
     }
   }
-] as MockMethod[]
+]

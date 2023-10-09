@@ -94,7 +94,7 @@ const activeKey = ref('1')
   }
 }
 .light.layout-header {
-  background: @light-theme-header;
+  background: #19317B;
   border: 1px solid #eee;
   color: hsla(0, 0%, 100%, 0.85);
   .api-text,
@@ -104,7 +104,7 @@ const activeKey = ref('1')
   }
 }
 .dark.layout-header {
-  background: @dark-theme-header;
+  background: #001529;
   .api-text,
   .notice,
   .user-name {

@@ -30,7 +30,7 @@ import { projectInfo } from './data';
     font-size: 14px;
     margin-left: 8px;
     &:hover {
-      color: @primary-color;
+      color: @colorPrimary;
     }
   }
 }

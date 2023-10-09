@@ -3,7 +3,7 @@
  * @Desc:
  * @Date: 2022-10-27 10:26:52
  * @LastEditors: Anxure
- * @LastEditTime: 2022-10-27 15:13:12
+ * @LastEditTime: 2023-10-09 09:41:10
  */
 import { tableParams } from '@/api/model/tableModel'
 import { MockMethod } from 'vite-plugin-mock'
@@ -33,4 +33,4 @@ export default [
       return resultPageSuccess(pageNum, pageSize, tableList)
     }
   }
-] as MockMethod[]
+]

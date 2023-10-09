@@ -60,7 +60,7 @@ export default defineComponent({
     padding: 0 8px;
     cursor: pointer;
     &:hover {
-      color: @primary-color;
+      color: @colorPrimary;
     }
     i {
       font-size: 20px;

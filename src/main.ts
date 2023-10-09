@@ -8,7 +8,7 @@ import '@/assets/iconfont/iconfont'
 import '@/assets/style/common.less'
 // import { setupProdMockServer } from '../mock/_createProdMockServer'
 // 如果你使用的 Vite，你可以使用 unplugin-vue-components 来进行按需加载。但是此插件无法处理非组件模块，如 message，这种组件需要手动加载：
-import 'ant-design-vue/es/message/style/css';
+// import 'ant-design-vue/es/message/style/css';
 import { message } from 'ant-design-vue'
 // if (import.meta.env.PROD) {
 //   setupProdMockServer()
