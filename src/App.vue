@@ -1,9 +1,5 @@
 <template>
-  <a-config-provider :locale="locale"  :theme="{
-      token: {
-        colorPrimary: themeToken!.colorPrimary,
-      },
-    }">
+  <a-config-provider :locale="locale"  :theme="customTheme">
     <router-view />
   </a-config-provider>
 </template>
@@ -13,6 +9,11 @@ import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import { themeToken } from '@/config/theme'
+import type { ThemeConfig } from 'ant-design-vue/es/config-provider/context';
+import { computed } from 'vue';
+const customTheme = computed<ThemeConfig>(() => ({
+  token:themeToken,
+}));
 dayjs.locale('zh-cn');
 const locale = zhCN
 </script>

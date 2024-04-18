@@ -6,11 +6,11 @@
     </div>
     <div class="workplace-content overflow-hidden t-b-3">
       <div class="flex">
-        <div class="w-7 r-4">
+        <div class="w-70%">
           <a-project :loading="loading"></a-project>
           <a-dynamic :loading="loading"></a-dynamic>
         </div>
-        <div class="w-3">
+        <div class="w-30%">
           <a-quick-nav :loading="loading"></a-quick-nav>
           <a-img :loading="loading"></a-img>
           <a-group :loading="loading"></a-group>

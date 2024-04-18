@@ -1,15 +1,14 @@
 @navbar-height: 60px;
-// @gray-text: #333;
-// 全局主题色
-@primary-color: #19317B;
-// 黑色主题下的头部颜色
-@dark-theme-header: #001529;
-// 亮色主题下的头部颜色
-@light-theme-header: #19317B;
-// :root {
-//   --primary-color: @#19317B;
-//   --dark-theme-header: @dark-theme-header;
-//   --light-theme-header: @light-theme-header;
-//   --gray-text: @gray-text;
-//   --navbar-height:60px;
-// }
+@primary-color: @colorPrimary; // 全局主色
+@success-color: @colorSuccess; // 成功色
+@warning-color: @colorWarning; // 警告色
+@error-color: @colorError; // 错误色
+@normal-color: @colorLink; // 文字颜色
+:root {
+  --colorPrimary: @primary-color;
+  --colorSuccess: @success-color;
+  --colorWarning: @warning-color;
+  --colorError: @error-color;
+  --colorLink: @normal-color;
+  --header-gray-bg-color-0: #f6f6f6;
+}

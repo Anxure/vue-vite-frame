@@ -1,12 +1,12 @@
 <template>
-  <div class="error-content flex align-item-center flex-center column">
+  <div class="error-content flex flex-col flex-justify-center flex-items-center">
     <div class="error-icon">
       <svg class="icon" aria-hidden="true" style="font-size: 200px">
         <use xlink:href="#icon-404" />
       </svg>
     </div>
     <div class="title">抱歉，页面消失了</div>
-    <a-button class="t-3" type="primary" @click="goToHome">返回首页</a-button>
+    <a-button class="mt-15px" type="primary" @click="goToHome">返回首页</a-button>
   </div>
 </template>
 

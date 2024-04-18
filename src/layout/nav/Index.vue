@@ -1,5 +1,5 @@
 <template>
-  <a-layout-header :class="['layout-header', theme]">
+  <a-layout-header :class="['layout-header !bg-primary', theme]">
     <div class="header-left">
       <slot name="logo"></slot>
     </div>
@@ -94,7 +94,7 @@ const activeKey = ref('1')
   }
 }
 .light.layout-header {
-  background: #19317B;
+  // background: #19317B;
   border: 1px solid #eee;
   color: hsla(0, 0%, 100%, 0.85);
   .api-text,

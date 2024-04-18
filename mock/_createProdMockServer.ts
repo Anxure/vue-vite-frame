@@ -4,9 +4,9 @@
  * @Desc:
  * @Date: 2022-05-31 10:23:31
  * @LastEditors: Anxure
- * @LastEditTime: 2022-11-08 15:53:45
+ * @LastEditTime: 2024-04-18 16:42:16
  */
-import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer'
+import { createProdMockServer } from 'vite-plugin-mock/client'
 // 批量加载
 // const modules = import.meta.globEager('./mock/module/*.ts')
 const modules = import.meta.glob('./module/*', { eager: true })

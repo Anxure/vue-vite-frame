@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2023-10-09 11:00:30
+ * @LastEditTime: 2024-04-18 17:11:45
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -36,7 +36,10 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
-          modifyVars: themeToken
+          modifyVars: {
+            ...themeToken,
+            hack: `true;@import "${resolve(__dirname, './src/assets/style/variables.less')}"`
+          }
         }
       }
     },
