@@ -3,7 +3,7 @@
  * @Desc:
  * @Date: 2022-10-25 15:29:59
  * @LastEditors: Anxure
- * @LastEditTime: 2022-11-03 13:50:59
+ * @LastEditTime: 2024-04-19 14:16:39
  */
 /*
  * @Author: Anxure
@@ -13,13 +13,14 @@
  * @LastEditTime: 2022-10-13 09:44:09
  */
 import { createHtmlPlugin } from 'vite-plugin-html';
-export const ViteHtmlPlugin = (isBuild: boolean, VITE_APP_TITLE : string, appVersion:  string)  => {
+export const ViteHtmlPlugin = (isBuild: boolean, VITE_APP_TITLE : string, appVersion:  string, publicPath: string)  => {
   return createHtmlPlugin({
     minify: isBuild,
     inject: {
       data: {
         title: VITE_APP_TITLE,
-        appVersion
+        appVersion,
+        // injectScript: `<script src="${publicPath}iconfont/iconfont.js"></script>`
       }
     }
   })

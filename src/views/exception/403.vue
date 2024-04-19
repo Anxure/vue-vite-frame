@@ -1,9 +1,7 @@
 <template>
   <div class="error-content flex flex-col flex-justify-center flex-items-center">
     <div class="error-icon">
-      <svg class="icon" aria-hidden="true" style="font-size: 200px">
-        <use xlink:href="#icon-quanxian" />
-      </svg>
+      <IconFont type="icon-quanxian" font-size="250px" ></IconFont>
     </div>
     <div class="title">抱歉，你当前没有权限访问</div>
     <a-button class="mt-15px" type="primary" @click="goToHome">返回首页</a-button>

@@ -4,9 +4,9 @@
     <div class="workplace-header">
       <a-header></a-header>
     </div>
-    <div class="workplace-content overflow-hidden t-b-3">
+    <div class="workplace-content overflow-hidden">
       <div class="flex">
-        <div class="w-70%">
+        <div class="w-70% mr-15px">
           <a-project :loading="loading"></a-project>
           <a-dynamic :loading="loading"></a-dynamic>
         </div>

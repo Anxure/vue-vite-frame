@@ -66,7 +66,7 @@ import { Form } from 'ant-design-vue'
 import { login } from '@/api/user'
 import type { LoginParams } from '@/api/model/userModel'
 import { setStore } from '@/utils/storage'
-import { useUserStore, useAppStore } from '@/store'
+import { useUserStore } from '@/store'
 import backImg from '@/assets/image/login/login-box-bg.svg'
 import { useBackToIndex } from '@/hooks/useBackToIndex'
 interface DataProps {
@@ -75,7 +75,7 @@ interface DataProps {
   formData: LoginParams
 }
 const loginData = reactive<DataProps>({
-  formTitle: 'vue-base-frame',
+  formTitle: import.meta.env.VITE_APP_TITLE,
   rememberMe: false,
   formData: {
     username: '',
@@ -85,8 +85,6 @@ const loginData = reactive<DataProps>({
 const loginLoading = ref(false)
 const router = useRouter()
 const userStore = useUserStore()
-const appStore = useAppStore()
-loginData.formTitle = appStore.title as string
 const useForm = Form.useForm
 
 const { validate, validateInfos } = useForm(

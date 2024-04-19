@@ -2,23 +2,8 @@
   <div class="logo">{{ title }}</div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { layoutSetting } from '@/config/globalSetting'
-import { useAppStore } from '@/store'
-export default defineComponent({
-  setup() {
-    const store = useAppStore()
-    const collapsed = computed(() => {
-      return store.collapsed
-    })
-    const title = layoutSetting.title
-    return {
-      collapsed,
-      title
-    }
-  }
-})
+<script lang="ts" setup>
+const title = import.meta.env.VITE_APP_TITLE
 </script>
 
 <style scoped lang="less">

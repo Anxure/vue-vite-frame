@@ -85,6 +85,9 @@ devDependencies:
   vite-plugin-html:
     specifier: ^3.2.2
     version: 3.2.2(vite@5.2.9)
+  vite-plugin-iconfont:
+    specifier: ^1.4.0
+    version: 1.4.0(vite@5.2.9)
   vite-plugin-mock:
     specifier: ^3.0.1
     version: 3.0.1(esbuild@0.20.2)(mockjs@1.1.0)(vite@5.2.9)
@@ -1320,6 +1323,11 @@ packages:
 
   /@vue/shared@3.4.23:
     resolution: {integrity: sha512-wBQ0gvf+SMwsCQOyusNw/GoXPV47WGd1xB5A1Pgzy0sQ3Bi5r5xm3n+92y3gCnB3MWqnRDdvfkRGxhKtbBRNgg==}
+
+  /@xmldom/xmldom@0.8.10:
+    resolution: {integrity: sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==}
+    engines: {node: '>=10.0.0'}
+    dev: true
 
   /acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
@@ -2953,6 +2961,15 @@ packages:
       vite: 5.2.9(@types/node@20.12.7)(less@4.2.0)
     dev: true
 
+  /vite-plugin-iconfont@1.4.0(vite@5.2.9):
+    resolution: {integrity: sha512-e/w1k9acGg/S83T7ky4QeD4ZYqaBczxNVbs3bolGp8Hvyecvf4a3F0z9PK+Z9Fe+NUllvQGM6DM4FjewB3gSJw==}
+    peerDependencies:
+      vite: ^5.0.12
+    dependencies:
+      vite: 5.2.9(@types/node@20.12.7)(less@4.2.0)
+      x2js: 3.4.4
+    dev: true
+
   /vite-plugin-mock@3.0.1(esbuild@0.20.2)(mockjs@1.1.0)(vite@5.2.9):
     resolution: {integrity: sha512-jEqRkX6Ts6z9e3sPrktcmujLGTIjxMwMZUhcgoo1q0dEMcljMBkZgJK1vMaetTm+GfOy2NkGVQOwVqLS/Vy6Uw==}
     engines: {node: '>=16.0.0'}
@@ -3082,6 +3099,12 @@ packages:
     hasBin: true
     dependencies:
       isexe: 2.0.0
+    dev: true
+
+  /x2js@3.4.4:
+    resolution: {integrity: sha512-yG/ThaBCgnsa3aoMPAe7QwDpcyU4D70hjXC4Y1lZSfD/Tgd0MpE19FnZZRAjekryw0c8cffpOt9zsPEiqktO6Q==}
+    dependencies:
+      '@xmldom/xmldom': 0.8.10
     dev: true
 
   /yallist@3.1.1:

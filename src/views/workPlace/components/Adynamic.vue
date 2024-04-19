@@ -6,9 +6,7 @@
         <a-list-item>
           <a-list-item-meta>
             <template #avatar>
-              <svg class="icon" aria-hidden="true" style="font-size: 18px">
-                <use :xlink:href="`${item.icon}`"></use>
-              </svg>
+              <IconFont :type="item.icon" font-size="30px"></IconFont>
             </template>
             <template #title>
               <a>{{ item.user }}</a>

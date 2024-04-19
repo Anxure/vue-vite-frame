@@ -2,9 +2,7 @@
   <a-sub-menu :key="menuInfo.path" v-bind="$attrs">
     <template #title>
       <span class="anticon">
-        <svg class="icon" aria-hidden="true">
-          <use :xlink:href="`#icon-${menuInfo.icon}`"></use>
-        </svg>
+        <IconFont :type="menuInfo.icon"></IconFont>
       </span>
       <span>{{ menuInfo.title }}</span>
     </template>

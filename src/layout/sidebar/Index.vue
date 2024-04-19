@@ -7,10 +7,11 @@
       <a-menu-item v-else :key="item.path">
         <router-link :to="(item.path as string)">
           <span class="anticon">
-            <svg class="icon" aria-hidden="true">
+            <IconFont :type="item.icon"></IconFont>
+            <!-- <svg class="icon" aria-hidden="true">
               <use :xlink:href="`#icon-${item.icon}`"></use>
             </svg>
-            <i :class="['iconfont', `icon-${item.icon}`]"></i>
+            <i :class="['iconfont', `icon-${item.icon}`]"></i> -->
           </span>
           <span>{{ item.title }}</span>
         </router-link>

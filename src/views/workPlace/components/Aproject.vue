@@ -3,15 +3,16 @@
     <template #extra><a href="#">更多</a></template>
     <a-card-grid v-for="item in projectInfo" :key="item.title" style="width: 33.33%">
       <div class="card-title flex">
-        <svg class="icon" aria-hidden="true" style="font-size: 18px">
+        <!-- <svg class="icon" aria-hidden="true" style="font-size: 18px">
           <use :xlink:href="`#${item.icon}`"></use>
-        </svg>
+        </svg> -->
+        <IconFont :type="item.icon" font-size="25px"></IconFont>
         <a>{{ item.title }}</a>
       </div>
-      <div class="card-content t-3">
+      <div class="card-content mt-15px">
         <div class="text-gray overflow-hidden-one">{{ item.content }}</div>
       </div>
-      <div class="card-info flex space-between t-3 text-gray">
+      <div class="card-info flex flex-justify-between mt-15px text-gray">
         <span>{{item.user}}</span>
         <span>{{item.date}}</span>
       </div>

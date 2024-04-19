@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-05-31 10:23:31
  * @LastEditors: Anxure
- * @LastEditTime: 2023-10-09 11:03:59
+ * @LastEditTime: 2024-04-19 14:32:20
  */
 import { resultSuccess, resultError, getJson, getQueryParameters, requestParams } from '../util'
 import { MockMethod } from 'vite-plugin-mock'
@@ -31,19 +31,19 @@ export const menuTree = [
     title: '工作台',
     name: 'workplace',
     path: '/workplace',
-    icon: 'gongzuotai'
+    icon: 'icon-gongzuotai'
   },
   {
     title: '表格示例',
     name: 'table',
     path: '/table',
-    icon:'biaoge1'
+    icon:'icon-biaoge1'
   },
   {
     title: '表单页',
     name: 'form',
     path: '/form',
-    icon: 'biaodan',
+    icon: 'icon-biaodan',
     children: [
       {
         title: '基础表单',
@@ -61,7 +61,7 @@ export const menuTree = [
     title: '异常页',
     name: 'exception',
     path: '/exception',
-    icon: 'yichangguanli',
+    icon: 'icon-yichangguanli',
     children: [
       {
         title: '403',
@@ -87,7 +87,7 @@ export const testMenuTree = [
     title: '表单页',
     name: 'form',
     path: '/form',
-    icon: 'biaodan',
+    icon: 'icon-biaodan',
     children: [
       {
         title: '基础表单',
@@ -105,7 +105,7 @@ export const testMenuTree = [
     title: '异常页',
     name: 'exception',
     path: '/exception',
-    icon: 'yichangguanli',
+    icon: 'icon-yichangguanli',
     children: [
       {
         title: '403',

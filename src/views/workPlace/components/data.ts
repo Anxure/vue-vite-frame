@@ -61,31 +61,31 @@ export const projectInfo: ProjectInfo[] = [
 ]
 export const dynamicInfo: DynamicInfo[] = [
   {
-    icon: '#icon-avatar',
+    icon: 'icon-avatar',
     user: 'Anxure',
     title: '在 <a>github</a> 创建了项目 <a>vue3-base-frame </a>',
     date: '2021-05-25'
   },
   {
-    icon: '#icon-touxiangnvhai1',
+    icon: 'icon-touxiangnvhai1',
     user: '小红',
     title: '在 <a>开源组</a> 提交了request',
     date: '2021-05-15'
   },
   {
-    icon: '#icon-icon-test',
+    icon: 'icon-icon-test',
     user: '张大伟',
     title: '在 <a>vue3-base-frame</a> 提了一个bug',
     date: '9小时前'
   },
   {
-    icon: '#icon-qiatongxingxiang',
+    icon: 'icon-qiatongxingxiang',
     user: '云梦烟',
     title: '在 <a>vue3-base-frame</a> 创建了分支develop',
     date: '6小时前'
   },
   {
-    icon: '#icon-touxiangnvhai',
+    icon: 'icon-touxiangnvhai',
     user: '孙晓月',
     title: '在 <a>vue3-base-frame</a> release了一个新的版本',
     date: '1小时前'
@@ -93,27 +93,27 @@ export const dynamicInfo: DynamicInfo[] = [
 ]
 export const quickNav: QuickNav[] = [
   {
-    icon: '#icon-gongzuotai1',
+    icon: 'icon-gongzuotai1',
     title: '工作台'
   },
   {
-    icon: '#icon-biaodan1',
+    icon: 'icon-biaodan1',
     title: '基础表单'
   },
   {
-    icon: '#icon-zu23631',
+    icon: 'icon-zu23631',
     title: '高级表单'
   },
   {
-    icon: '#icon-biaoge',
+    icon: 'icon-biaoge',
     title: '表格'
   },
   {
-    icon: '#icon-icon-test2',
+    icon: 'icon-icon-test2',
     title: '404页面'
   },
   {
-    icon: '#icon-icon-test1',
+    icon: 'icon-icon-test1',
     title: '403页面'
   }
 ]

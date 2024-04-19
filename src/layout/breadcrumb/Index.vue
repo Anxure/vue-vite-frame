@@ -1,9 +1,7 @@
 <template>
   <div class="breadcrumb-content">
     <span class="trigger" @click="handleCollapse">
-      <svg class="icon" aria-hidden="true">
-        <use :xlink:href="collapsed ? '#icon-menu-unfold3' : '#icon-menu-fold'"></use>
-      </svg>
+      <IconFont type="icon-menu-unfold3"></IconFont>
     </span>
     <a-breadcrumb class="breadcrumb" v-if="!useMultiTab">
       <a-breadcrumb-item v-for="item in breadContent" :key="item.name">{{ item.meta.title }}</a-breadcrumb-item>

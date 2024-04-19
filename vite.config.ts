@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2024-04-18 17:11:45
+ * @LastEditTime: 2024-04-19 11:55:34
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -16,17 +16,16 @@ import { themeToken } from './src/config/theme';
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   console.log(command)
-  const root = process.cwd()
+  const root = process.cwd() // 项目根目录
   const env = loadEnv(mode, root)
   const viteEnv = wrapperEnv(env);
-  const { VITE_PROXY, VITE_PUBLIC_PATH, VITE_PROD_MOCK } = viteEnv
+  const { VITE_PROXY, VITE_PUBLIC_PATH, VITE_PROD_MOCK, VITE_APP_TITLE, VITE_ICONFONT_URL } = viteEnv
   const isBuild = command === 'build'
   const isOpenGip = false
-  const title = layoutSetting.title
   const buildTime = `build-time=${new Date().toLocaleString()}`
   return {
     base: VITE_PUBLIC_PATH,
-    plugins: createVitePlugins(isBuild, isOpenGip , title, buildTime, VITE_PROD_MOCK),
+    plugins: createVitePlugins(isBuild, isOpenGip , VITE_APP_TITLE, buildTime, VITE_PROD_MOCK, VITE_ICONFONT_URL, VITE_PUBLIC_PATH),
     resolve: {
       alias: {
         '@': resolve(__dirname, './src')
