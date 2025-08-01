@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-06-01 10:30:06
  * @LastEditors: Anxure
- * @LastEditTime: 2024-04-19 11:56:40
+ * @LastEditTime: 2025-08-01 17:56:42
  */
 // import type { Plugin } from 'vite'
 import { PluginOption } from 'vite';
@@ -20,11 +20,7 @@ import { ViteHtmlPlugin } from './html'
 export function createVitePlugins(isBuild: boolean, isOpenGip: boolean,  title: string, version: string, isMock: boolean, fontUrl:string, publicPath: string ) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // vue支持
-    vue({
-      script: {
-        propsDestructure: true // 开启props语法糖
-      }
-    }),
+    vue(),
     // JSX支持
     vueJsx(),
     unoCSS(),

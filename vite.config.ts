@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2021-06-25 10:27:34
  * @LastEditors: Anxure
- * @LastEditTime: 2024-04-19 11:55:34
+ * @LastEditTime: 2025-08-01 17:56:26
  */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
@@ -77,9 +77,6 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         // 确保外部化处理那些你不想打包进库的依赖
         external: [],
         // https://rollupjs.org/guide/en/#big-list-of-options
-      },
-      watch: {
-        // https://rollupjs.org/guide/en/#watch-options
       },
       // Turning off brotliSize display can slightly reduce packaging time
       reportCompressedSize: false,
