@@ -14,7 +14,7 @@
           <div>
             <a-input
               v-if="editableData[record.key]"
-              v-model:value="editableData[record.key][col]"
+              v-model:value="editableData[record.key][col as keyof DataItem] as string "
               style="margin: -5px 0"
             />
             <template v-else>{{ text }}</template>
@@ -72,7 +72,7 @@ import { PlusOutlined } from '@ant-design/icons-vue'
 import { cloneDeep } from 'lodash-es'
 import WoreHouse from './components/Worehouse.vue'
 import TaskForm from './components/TaskForm.vue'
-import { message } from 'ant-design-vue'
+import { message } from 'ant-design-vue';
 interface DataItem {
   key: string
   name: string

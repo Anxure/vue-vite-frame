@@ -1,11 +1,3 @@
-/*
- * @Author: Anxure
- * @Github: https://github.com/Anxure
- * @Desc:
- * @Date: 2021-06-25 10:27:34
- * @LastEditors: Anxure
- * @LastEditTime: 2025-08-01 17:56:26
- */
 import { defineConfig, UserConfig, ConfigEnv, loadEnv } from 'vite'
 import { createVitePlugins } from './config/vite/plugins'
 import { resolve } from 'path'
