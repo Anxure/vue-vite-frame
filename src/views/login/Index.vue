@@ -1,23 +1,23 @@
 <template>
   <div class="login-container">
     <div class="login-form-box flex h-full p-3%">
-      <div class="w-50% flex flex-col flex-items-center relative flex-justify-center">
-        <div class="title-container absolute font-bold color-#FFF">{{ loginData.formTitle }}</div>
-        <div class="center">
+      <div class="w-50% flex flex-col items-center relative justify-center">
+        <div class="title-container absolute font-bold text-white">{{ loginData.formTitle }}</div>
+        <div class="text-center">
           <img class="w-50%" :src="backImg" :alt="loginData.formTitle" />
         </div>
-        <div class="mt-20px login-info color-#FFF">基于vue3.0、TypeScript、Vite、pinia、ant-design-vue开发的后台管理系统</div>
-        <div class="mt-20px login-info color-#FFF">
+        <div class="mt-20px login-info text-white">基于vue3.0、TypeScript、Vite、pinia、ant-design-vue开发的后台管理系统</div>
+        <div class="mt-20px login-info text-white">
           @github:
           <a
-            class="color-#FFF"
+            class="text-white"
             target="_blank"
             href="https://github.com/Anxure/vue-base-frame"
           >https://github.com/Anxure/vue-vite-frame</a>
         </div>
-        <div class="mt-20px login-info color-#FFF">@author: Anxure</div>
+        <div class="mt-20px login-info text-white">@author: Anxure</div>
       </div>
-      <div class="w-50% flex flex-justify-center flex-items-center">
+      <div class="w-50% flex justify-center items-center">
         <a-form
           :label-col="{ span: 4 }"
           :wrapper-col="{ span: 20 }"
@@ -25,7 +25,7 @@
           class="login-form"
           @submit="handleLogin"
         >
-          <div class="font-bold color-#FFF form-title mb-15px">登录：</div>
+          <div class="font-bold text-white form-title mb-15px">登录：</div>
           <a-form-item v-bind="validateInfos.username">
             <a-input size="large" v-model:value="loginData.formData.username" placeholder="默认账号为admin/test" />
           </a-form-item>
@@ -38,11 +38,11 @@
             />
           </a-form-item>
           <a-form-item>
-            <div class="flex flex-justify-between">
+            <div class="flex justify-between">
               <a-checkbox v-model:checked="loginData.rememberMe">
-                <span class="color-#FFF">记住我</span>
+                <span class="text-white">记住我</span>
               </a-checkbox>
-              <a class="color-#fff">忘记密码？</a>
+              <a class="text-white">忘记密码？</a>
             </div>
           </a-form-item>
           <a-form-item :wrapper-col="{ span: 20, offset: 0 }">

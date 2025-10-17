@@ -4,7 +4,7 @@ import { resolve } from 'path'
 import { layoutSetting } from './src/config/globalSetting'
 import { wrapperEnv } from './config/utils';
 import { createProxy } from './config/proxy';
-import { themeToken } from './src/config/theme';
+// 主题色现在通过CSS变量统一管理，不再需要在这里导入
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   console.log(command)
@@ -28,7 +28,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         less: {
           javascriptEnabled: true,
           modifyVars: {
-            ...themeToken,
+            // 主题色现在通过CSS变量统一管理，这里只保留必要的Less变量
             hack: `true;@import "${resolve(__dirname, './src/assets/style/variables.less')}"`
           }
         }

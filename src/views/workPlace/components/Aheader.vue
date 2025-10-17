@@ -4,19 +4,19 @@
       <a-avatar class="user-avatar" :size="72" :src="headerImg"></a-avatar>
       <div class="user-text">
         <h3>早安，Anxure，开始您一天的工作吧！</h3>
-        <span class="text-gray">今日天气：多云， 温度：19℃ - 35℃</span>
+        <span class="text-gray-500">今日天气：多云， 温度：19℃ - 35℃</span>
       </div>
-      <div class="user-work flex  flex-justify-end flex-1">
+      <div class="user-work flex justify-end flex-1">
           <div class="work-item flex flex-col">
-            <span class="text-gray">待办</span>
+            <span class="text-gray-500">待办</span>
             <span>6/10</span>
           </div>
           <div class="work-item flex flex-col mx-12px">
-            <span  class="text-gray">项目</span>
+            <span  class="text-gray-500">项目</span>
             <span>18</span>
           </div>
           <div class="work-item flex flex-col mr-20px">
-            <span  class="text-gray">团队</span>
+            <span  class="text-gray-500">团队</span>
             <span>300</span>
           </div>
       </div>

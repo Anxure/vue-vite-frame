@@ -1,9 +1,9 @@
 <template>
-  <div class="breadcrumb-content">
-    <span class="trigger" @click="handleCollapse">
-      <IconFont type="icon-menu-unfold3"></IconFont>
+  <div class="flex items-center bg-white">
+    <span class="py-0 px-2 hover:text-primary" @click="handleCollapse">
+      <IconFont type="icon-menu-unfold3" class="text-20px"></IconFont>
     </span>
-    <a-breadcrumb class="breadcrumb" v-if="!useMultiTab">
+    <a-breadcrumb class="leading-48px" v-if="!useMultiTab">
       <a-breadcrumb-item v-for="item in breadContent" :key="item.name">{{ item.meta.title }}</a-breadcrumb-item>
     </a-breadcrumb>
     <multi-tab v-else></multi-tab>
@@ -48,24 +48,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<style lang="less" scoped>
-.breadcrumb-content {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  .trigger {
-    padding: 0 8px;
-    cursor: pointer;
-    &:hover {
-      color: @colorPrimary;
-    }
-    i {
-      font-size: 20px;
-    }
-  }
-  .breadcrumb {
-    line-height: 48px;
-  }
-}
-</style>

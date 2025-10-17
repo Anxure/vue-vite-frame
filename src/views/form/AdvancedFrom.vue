@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full background-f">
+  <div class="w-full bg-white">
     <a-card title="仓库管理" :bordered="false">
       <WoreHouse ref="worehouse"></WoreHouse>
     </a-card>
@@ -25,16 +25,16 @@
             <div class="editable-row-operations">
               <span v-if="editableData[record.key]">
                 <span v-if="!record.isNew">
-                  <a class="r-1" @click="save(record.key)">保存</a>
+                  <a class="mr-1" @click="save(record.key)">保存</a>
                   <a @click="cancel(record.key)">取消</a>
                 </span>
                 <span v-else>
-                  <a class="r-1" @click="save(record.key)">添加</a>
+                  <a class="mr-1" @click="save(record.key)">添加</a>
                   <a @click="remove(record.key)">删除</a>
                 </span>
               </span>
               <span v-else>
-                <a class="r-1" @click="edit(record.key)">编辑</a>
+                <a class="mr-1" @click="edit(record.key)">编辑</a>
                 <a-popconfirm title="是否要删除此行？" @confirm="delFn(record.key)">
                   <a>删除</a>
                 </a-popconfirm>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full background-f">
+  <div class="w-full bg-white">
     <a-table
       :dataSource="dataList"
       :columns="columns"
@@ -8,7 +8,7 @@
       :row-selection="rowSelection"
       :rowKey="rowKey"
     />
-    <div class="center t-4 p-t-3">
+    <div class="text-center mt-4 pt-3">
       <a-pagination
         ref="paginationElem"
         show-quick-jumper

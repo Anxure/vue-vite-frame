@@ -1,5 +1,5 @@
 <template>
-  <a-card title="团队" class="t-4">
+  <a-card title="团队" class="mt-4">
     <ul class="flex">
       <li style="width: 25%" v-for="(item,index) in groupData" :key="index"><a >{{item}}</a></li>
     </ul>

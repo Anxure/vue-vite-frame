@@ -1,5 +1,5 @@
 <template>
-  <a-card title="动态" class="dynamic-list t-4">
+  <a-card title="动态" class="dynamic-list mt-4">
     <template #extra><a href="#">更多</a></template>
     <a-list item-layout="horizontal" :data-source="dynamicInfo">
       <template #renderItem="{ item }">
@@ -29,7 +29,7 @@ import { dynamicInfo } from './data';
 <style scoped lang="less">
 .dynamic-list {
   :deep(a){
-    color: @colorPrimary;
+    color: var(--colorPrimary);
     margin-right:3px;
   }
 }

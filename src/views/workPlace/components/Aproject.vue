@@ -10,9 +10,9 @@
         <a>{{ item.title }}</a>
       </div>
       <div class="card-content mt-15px">
-        <div class="text-gray overflow-hidden-one">{{ item.content }}</div>
+        <div class="text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap">{{ item.content }}</div>
       </div>
-      <div class="card-info flex flex-justify-between mt-15px text-gray">
+      <div class="card-info flex justify-between mt-15px text-gray-500">
         <span>{{item.user}}</span>
         <span>{{item.date}}</span>
       </div>
@@ -31,7 +31,7 @@ import { projectInfo } from './data';
     font-size: 14px;
     margin-left: 8px;
     &:hover {
-      color: @colorPrimary;
+      color: var(--colorPrimary);
     }
   }
 }

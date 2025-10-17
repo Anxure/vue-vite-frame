@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full h-full background-f">
-    <div class="form-content w-full p-t-5">
+  <div class="w-full h-full bg-white">
+    <div class="form-content w-full pt-5">
       <a-form
         ref="formRef"
         :model="formState"

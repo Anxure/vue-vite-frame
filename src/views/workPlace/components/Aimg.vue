@@ -1,5 +1,5 @@
 <template>
-  <a-card class="img-list t-4 center">
+  <a-card class="img-list mt-4 text-center">
     <img style="max-height: 367px" :src="workplaceImg" alt="少壮不努力老大徒伤悲">
   </a-card>
 </template>

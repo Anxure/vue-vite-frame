@@ -1,14 +1,4 @@
 @navbar-height: 60px;
-@primary-color: @colorPrimary; // 全局主色
-@success-color: @colorSuccess; // 成功色
-@warning-color: @colorWarning; // 警告色
-@error-color: @colorError; // 错误色
-@normal-color: @colorLink; // 文字颜色
-:root {
-  --colorPrimary: @primary-color;
-  --colorSuccess: @success-color;
-  --colorWarning: @warning-color;
-  --colorError: @error-color;
-  --colorLink: @normal-color;
-  --header-gray-bg-color-0: #f6f6f6;
-}
+
+// 主题色现在统一在 src/config/theme.ts 中管理
+// CSS 变量通过 JavaScript 动态注入，这里不再重复定义
