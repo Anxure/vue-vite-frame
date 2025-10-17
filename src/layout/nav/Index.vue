@@ -1,15 +1,15 @@
 <template>
-  <a-layout-header :class="['layout-header !bg-primary', theme]">
-    <div class="header-left">
+  <a-layout-header class="flex justify-between items-center px-4 !bg-primary">
+    <div>
       <slot name="logo"></slot>
     </div>
-    <div class="header-right">
+    <div class="flex flex-row flex-nowrap justify-end items-center">
       <a-tooltip @click="goToApi" title="API文档">
-        <file-outlined class="api-text"></file-outlined>
+        <file-outlined class="text-4 mx-1 cursor-pointer text-white/85"></file-outlined>
       </a-tooltip>
       <a-popover placement="topLeft" trigger="click">
         <a-badge :dot="show">
-          <BellOutlined class="notice"></BellOutlined>
+          <BellOutlined class="text-4 mx-1 cursor-pointer text-white/85"></BellOutlined>
         </a-badge>
         <template #content>
           <a-tabs v-model:activeKey="activeKey">
@@ -20,11 +20,11 @@
         </template>
       </a-popover>
       <a-dropdown>
-        <div class="user-info">
-          <a-avatar class="user-avatar" :src="headerImg">
+        <div class="cursor-pointer">
+          <a-avatar class="ml-2.5" :src="headerImg">
             <!-- <template #icon><UserOutlined /></template> -->
           </a-avatar>
-          <span class="user-name">{{ userInfo.username }}<DownOutlined /></span>
+          <span class="ml-2.5 text-white/85">{{ userInfo.username }}<DownOutlined /></span>
         </div>
         <template #overlay>
           <a-menu>
@@ -58,57 +58,7 @@ function goToApi() {
 function loginOut() {
  useLoginOut()
 }
-const theme = appStore.theme
 const userInfo = userStore.userInfo
 const show = ref(false)
 const activeKey = ref('1')
 </script>
-
-<style lang="less" scoped>
-.layout-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 15px;
-  .api-text,
-  .notice {
-    font-size: 16px;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  .user-info {
-    cursor: pointer;
-    .user-avatar {
-      margin-left: 10px;
-    }
-    .user-name {
-      margin-left: 10px;
-    }
-  }
-  .header-right {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-  }
-}
-.light.layout-header {
-  // background: #19317B;
-  border: 1px solid #eee;
-  color: hsla(0, 0%, 100%, 0.85);
-  .api-text,
-  .notice,
-  .user-name {
-    color: hsla(0, 0%, 100%, 0.85);
-  }
-}
-.dark.layout-header {
-  background: #001529;
-  .api-text,
-  .notice,
-  .user-name {
-    color: hsla(0, 0%, 100%, 0.85);
-  }
-}
-</style>

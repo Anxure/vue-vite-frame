@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">{{ title }}</div>
+  <div class="h-8 flex items-center justify-center text-2xl font-bold text-white">{{ title }}</div>
 </template>
 
 <script lang="ts" setup>
@@ -7,15 +7,5 @@ const title = import.meta.env.VITE_APP_TITLE
 </script>
 
 <style scoped lang="less">
-.logo {
-  height: 32px;
-  margin: 16px;
-  font-size: 30px;
-  text-align: center;
-  line-height: 32px;
-  font-weight: bold;
-}
-.dark .logo {
-  color: #fff;
-}
+
 </style>
