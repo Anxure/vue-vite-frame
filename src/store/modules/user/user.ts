@@ -28,11 +28,27 @@ export const useUserStore = defineStore('user', () => {
     return { result, userMenu }
   }
 
+  const resetUserStore = () => {
+    userInfo.value = <LoginModel>{
+      code: 0,
+      desc: '',
+      message: '',
+      username: '',
+      id: '',
+      realName: '',
+      token: '',
+      password: ''
+    } as LoginModel
+    menu.value = []
+    userRouter.value = []
+  }
+
   return {
     userInfo,
     menu,
     userRouter,
     setUserInfo,
-    getMenu: getMenuData
+    getMenu: getMenuData,
+    reset: resetUserStore
   }
 })
