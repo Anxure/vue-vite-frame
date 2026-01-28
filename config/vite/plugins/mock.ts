@@ -4,7 +4,7 @@
  * @Desc:
  * @Date: 2022-06-01 10:40:55
  * @LastEditors: Anxure
- * @LastEditTime: 2022-11-08 10:06:21
+ * @LastEditTime: 2026-01-28 10:57:05
  */
 /**
  * @name ConfigMockPlugin
@@ -15,12 +15,6 @@
      return viteMockServe({
          ignore: /^\_/,
          mockPath: 'mock',
-         localEnabled: !isBuild,
-         prodEnabled: isBuild && isMock, //实际开发请关闭，会影响打包体积
-         // https://github.com/anncwb/vite-plugin-mock/issues/9
-         injectCode: `
-        import { setupProdMockServer } from '../mock/_createProdMockServer';
-        setupProdMockServer();
-        `,
+         enable: isMock, //实际开发请关闭，会影响打包体积
      })
  }
