@@ -6,9 +6,7 @@
  * @LastEditors: Anxure
  * @LastEditTime: 2022-07-13 10:36:41
  */
-import { MenuTheme } from "ant-design-vue/es"
 export interface AppState {
   collapsed: boolean,
-  theme: MenuTheme,
   [key: string]: unknown
 }

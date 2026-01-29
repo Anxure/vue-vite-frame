@@ -66,7 +66,6 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
           manualChunks: {
             'vue-vendor': ['vue', 'vue-router', 'pinia'],
             'ant-design-vue': ['ant-design-vue'],
-            'utils': ['@/utils'],
           },
           chunkFileNames: 'assets/js/[name]-[hash].js',
           entryFileNames: 'assets/js/[name]-[hash].js',
