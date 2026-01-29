@@ -25,6 +25,8 @@
 
 * 表格封装、多标签页导航、错误提示页面、主题更换等其他功能
 
+* 新增明暗主题
+
 ### 预览
 预览地址：
 [https://anxure.github.io/vue-vite-frame/](https://anxure.github.io/vue-vite-frame/)
