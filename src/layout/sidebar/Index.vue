@@ -47,6 +47,7 @@ import SiderItem from './SiderItem.vue';
   display: inline-block;
 }
 .menu-content {
-  max-height: calc(100vh - 64px);
+  height: calc(100vh - 64px);
+  overflow-y: auto;
 }
 </style>
