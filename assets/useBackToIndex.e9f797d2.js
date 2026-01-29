@@ -1,1 +1,0 @@
-import{u as t}from"./index.af90269b.js";function u(r){if(console.log(r),r.length===0)throw Error("\u6682\u65E0\u83DC\u5355\uFF0C\u8BF7\u8054\u7CFB\u7BA1\u7406\u5458");return r[0].path&&r[0].path!=="/"?r[0].path:u(r[0].children)}function n(){const o=t().menu;return console.log(o),u(o)}export{n as u};
