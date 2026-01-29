@@ -1,1 +1,0 @@
-import{_ as o,a4 as t,o as r,$ as n}from"./index-C9KpkboQ.js";const a={name:"PageView"};function s(c,_,p,i,f,m){const e=t("router-view");return r(),n(e)}const $=o(a,[["render",s]]);export{$ as default};

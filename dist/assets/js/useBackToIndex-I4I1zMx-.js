@@ -1,0 +1,1 @@
+import{u as r}from"./index-BONNjK7n.js";function t(r){if(0===r.length)throw Error("暂无菜单，请联系管理员");return r[0].path&&"/"!==r[0].path?r[0].path:t(r[0].children)}function n(){return t(r().menu)}export{n as u};
