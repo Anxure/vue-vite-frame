@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
+    "@vueuse/core": "^14.1.0",
     "ant-design-vue": "^4.1.2",
     "axios": "^1.12.2",
     "dayjs": "^1.11.18",
@@ -17,6 +18,8 @@
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.5.22",
+    "vue-clipboard3": "^2.0.0",
+    "vue-highlight-words": "^3.0.1",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {

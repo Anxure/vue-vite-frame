@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-white">
+  <div class="w-full">
     <a-card title="仓库管理" :bordered="false">
       <WoreHouse ref="worehouse"></WoreHouse>
     </a-card>

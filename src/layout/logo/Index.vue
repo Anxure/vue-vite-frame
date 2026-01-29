@@ -1,5 +1,5 @@
 <template>
-  <div class="h-8 flex items-center justify-center text-2xl font-bold text-white">{{ title }}</div>
+  <div class="h-8 flex items-center justify-center text-2xl font-bold text-[var(--ant-colorText)]">{{ title }}</div>
 </template>
 
 <script lang="ts" setup>

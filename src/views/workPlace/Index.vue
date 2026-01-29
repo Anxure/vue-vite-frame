@@ -1,7 +1,7 @@
 
 <template>
   <div class="workplace">
-    <div class="workplace-header">
+    <div class="workplace-header mb-4">
       <a-header></a-header>
     </div>
     <div class="workplace-content overflow-hidden">

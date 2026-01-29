@@ -1,12 +1,12 @@
 <template>
-  <div class="multi-tab-box">
+  <div class="h-40px w-full">
     <a-tabs
       v-model:activeKey="tabOptions.activeKey"
       type="editable-card"
       @edit="onEdit"
       hideAdd
       @tabClick="tabClick"
-      :tabBarStyle="{ background: '#FFF', margin: 0, paddingLeft: '16px', paddingTop: '1px' }"
+      :tabBarStyle="{ background: 'var(--ant-colorBgContainer)', margin: 0, paddingLeft: '16px', paddingTop: '1px' }"
     >
       <a-tab-pane
         v-for="tab in tabOptions.pages"

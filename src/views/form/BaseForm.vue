@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full bg-white">
+  <div class="w-full h-full ">
     <div class="form-content w-full pt-5">
       <a-form
         ref="formRef"
@@ -53,13 +53,14 @@
 </script>
 
 <script lang="ts" setup>
-import { ValidateErrorEntity } from 'ant-design-vue/es/form/interface';
+import type { ValidateErrorEntity, RuleObject } from 'ant-design-vue/es/form/interface';
 import { reactive, ref, toRaw } from 'vue';
+import type { Dayjs } from 'dayjs';
 // import { Moment } from 'moment';
 import { message } from 'ant-design-vue'
 interface FormState {
   name: string;
-  date:[];
+  date: [Dayjs, Dayjs] | undefined;
   standard: string;
   type: string[];
   desc: string
@@ -71,7 +72,7 @@ const formRef = ref();
 const dateFormat = ref('YYYY-MM-DD');
 const formState = reactive<FormState>({
   name: '',
-  date: [],
+  date: undefined,
   standard: '',
   type: [],
   desc: '',
@@ -79,7 +80,7 @@ const formState = reactive<FormState>({
   sex: undefined,
   client: ''
 });
-const rules = {
+const rules: { [k: string]: RuleObject | RuleObject[] } = {
   name: [
     { required: true, message: '请给目标取个名字', trigger: 'blur' },
     { min: 3, max: 5, message: '长度在3-5个字符', trigger: 'blur' }
@@ -95,7 +96,6 @@ const rules = {
   standard: [{ required: true, message: '请输入衡量标准', trigger: 'blur' }],
   type: [
     {
-      type: 'array',
       required: true,
       message: '请选择邀请方式',
       trigger: 'change'

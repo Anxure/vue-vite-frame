@@ -1,30 +1,30 @@
 <template>
-  <a-layout-header class="flex justify-between items-center px-4 !bg-primary">
-    <div>
+  <ALayoutHeader class="fixed  left-0 flex justify-between items-center right-0 top-0 z-100 border-b-1 border-b-[var(--ant-colorBorderSecondary)] border-b-solid !bg-[var(--ant-colorBgContainer)] !p-0 !leading-none !pr-2">
+    <div class="ml-8">
       <slot name="logo"></slot>
     </div>
     <div class="flex flex-row flex-nowrap justify-end items-center">
-      <a-tooltip @click="goToApi" title="API文档">
-        <file-outlined class="text-4 mx-1 cursor-pointer text-white/85"></file-outlined>
-      </a-tooltip>
-      <a-popover placement="topLeft" trigger="click">
-        <a-badge :dot="show">
-          <BellOutlined class="text-4 mx-1 cursor-pointer text-white/85"></BellOutlined>
-        </a-badge>
-        <template #content>
-          <a-tabs v-model:activeKey="activeKey">
-            <a-tab-pane key="1" tab="通知">通知</a-tab-pane>
-            <a-tab-pane key="2" tab="消息">消息</a-tab-pane>
-            <a-tab-pane key="3" tab="待办">消息</a-tab-pane>
-          </a-tabs>
-        </template>
-      </a-popover>
+
+      <template v-if="showDarkSwitch">
+        <span>
+          <DarkSwitch v-model:checked="themeDarkStore.isDark" />
+        </span>
+        <ADivider type="vertical" />
+      </template>
+      <template v-if="showAntTokenAsCssVariablesQueryButton">
+        <span>
+          <AntTokenAsCssVariablesQueryButton />
+        </span>
+        <ADivider type="vertical" />
+      </template>
       <a-dropdown>
         <div class="cursor-pointer">
           <a-avatar class="ml-2.5" :src="headerImg">
             <!-- <template #icon><UserOutlined /></template> -->
           </a-avatar>
-          <span class="ml-2.5 text-white/85">{{ userInfo.username }}<DownOutlined /></span>
+          <span class="ml-2.5 text-white/85">{{ userInfo.username }}
+            <DownOutlined />
+          </span>
         </div>
         <template #overlay>
           <a-menu>
@@ -38,27 +38,28 @@
         </template>
       </a-dropdown>
     </div>
-  </a-layout-header>
+  </ALayoutHeader>
 </template>
 
 <script lang="ts" setup>
-import {ref } from 'vue'
-import { useAppStore, useUserStore } from '@/store'
-import { useRouter } from 'vue-router'
-import { FileOutlined, BellOutlined, DownOutlined } from '@ant-design/icons-vue'
-import { message } from 'ant-design-vue'
+import { useUserStore } from '@/store'
+import { DownOutlined } from '@ant-design/icons-vue'
 import headerImg from '@/assets/image/avatar.png'
 import { useLoginOut } from '@/hooks/useLoginOut'
-const appStore = useAppStore()
+import { useThemeDarkStore } from '@/store/modules/app/themeDark'
+import DarkSwitch from '../DarkSwitch.vue'
+import AntTokenAsCssVariablesQueryButton from '@/components/antTokenAsCssVariables/AntTokenAsCssVariablesQueryButton.vue'
+import { computed } from 'vue'
 const userStore = useUserStore()
-const router = useRouter()
-function goToApi() {
-  message.info('功能暂未开发')
-}
+const themeDarkStore = useThemeDarkStore()
+const showDarkSwitch = computed(() => {
+  return import.meta.env.DEV
+})
+const showAntTokenAsCssVariablesQueryButton = computed(() => {
+  return import.meta.env.DEV
+})
 function loginOut() {
- useLoginOut()
+  useLoginOut()
 }
 const userInfo = userStore.userInfo
-const show = ref(false)
-const activeKey = ref('1')
 </script>

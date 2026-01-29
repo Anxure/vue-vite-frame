@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center bg-white">
+  <div class="flex items-center bg-[var(--ant-colorBgContainer)]">
     <span class="py-0 px-2 hover:text-primary" @click="handleCollapse">
       <IconFont type="icon-menu-unfold3" class="text-20px"></IconFont>
     </span>
