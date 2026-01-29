@@ -22,7 +22,7 @@
           <a-avatar class="ml-2.5" :src="headerImg">
             <!-- <template #icon><UserOutlined /></template> -->
           </a-avatar>
-          <span class="ml-2.5 text-white/85">{{ userInfo.username }}
+          <span class="ml-2.5 text-[var(--ant-colorText)]">{{ userInfo.username }}
             <DownOutlined />
           </span>
         </div>
