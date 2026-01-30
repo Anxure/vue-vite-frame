@@ -53,10 +53,10 @@ import { computed } from 'vue'
 const userStore = useUserStore()
 const themeDarkStore = useThemeDarkStore()
 const showDarkSwitch = computed(() => {
-  return import.meta.env.DEV
+  return true
 })
 const showAntTokenAsCssVariablesQueryButton = computed(() => {
-  return import.meta.env.DEV
+  return true
 })
 function loginOut() {
   useLoginOut()

@@ -3,12 +3,10 @@
  * @Desc:
  * @Date: 2022-10-27 10:26:52
  * @LastEditors: Anxure
- * @LastEditTime: 2023-10-09 09:41:10
+ * @LastEditTime: 2026-01-30 09:30:52
  */
 import { tableParams } from '@/api/model/tableModel'
-import { MockMethod } from 'vite-plugin-mock'
 import { resultPageSuccess } from '../util'
-import { Random } from 'mockjs'
 const professionList = ['教师', '医生', '消防员', '程序员', '工人', '学生']
 const phonePrex = ['132', '135', '189', '183']
 const tableList = Array.from({length: 200}).map((item,index) => {

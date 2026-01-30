@@ -4,10 +4,9 @@
  * @Desc:
  * @Date: 2022-05-31 10:23:31
  * @LastEditors: Anxure
- * @LastEditTime: 2024-04-19 14:32:20
+ * @LastEditTime: 2026-01-30 09:11:13
  */
 import { resultSuccess, resultError, getJson, getQueryParameters, requestParams } from '../util'
-import { MockMethod } from 'vite-plugin-mock'
 const defaultUserInfo = [
   {
     id: '1',

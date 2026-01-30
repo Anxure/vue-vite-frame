@@ -9,7 +9,7 @@ import { useUserStore} from '@/store'
 import { computed } from 'vue'
 import { useLoginOut } from '@/hooks/useLoginOut'
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
+  history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
   routes: [...constantRoutes]
 })
 let routerLoaded = false // 判断是是否加过路由，避免重复执行

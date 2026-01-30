@@ -45,7 +45,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       proxy: createProxy(VITE_PROXY)
     },
     esbuild: {
-      pure: command === 'build' ? ['console.log', 'debugger']: []
+      // pure: command === 'build' ? ['console.log', 'debugger']: []
     },
     build: {
       target: 'modules',
@@ -54,8 +54,8 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       minify: 'terser',
       terserOptions: {
         compress: {
-          drop_console: isBuild,
-          drop_debugger: isBuild,
+          drop_console: false,
+          drop_debugger: false,
         },
         output: {
           comments: false,

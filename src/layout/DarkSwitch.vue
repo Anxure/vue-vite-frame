@@ -18,11 +18,11 @@
   .ant-switch.with-sun :deep(.ant-switch-handle::before) {
     background-size: 14px;
     background-position: left 2px center;
-    background-image: url(./assets/images/sun.svg);
+    background-image: url(./images/sun.svg);
   }
   .ant-switch.with-moon :deep(.ant-switch-handle::before) {
     background-size: 14px;
     background-position: right 1px center;
-    background-image: url(./assets/images/moon.svg);
+    background-image: url(./images/moon.svg);
   }
 </style>
